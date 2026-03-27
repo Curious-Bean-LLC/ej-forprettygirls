@@ -4,7 +4,6 @@
   z-index: -1;
   background: #1a0a2e;
   overflow: hidden;
-  filter: blur(0px);
 }
 
 .blob {
@@ -14,13 +13,12 @@
   opacity: 0.75;
   filter: blur(60px);
   transform-origin: center;
-  will-change: transform, opacity, filter;
 }
 
 .blob-1 {
-  width: clamp(200px, 60vw, 600px);
-  height: clamp(200px, 60vw, 600px);
-  background: radial-gradient(circle, #ff6b35, #e040fb);
+  width: clamp(320px, 85vw, 600px);
+  height: clamp(320px, 85vw, 600px);
+  background: radial-gradient(circle 50% at center, #ff6b35, #e040fb);
   top: -10%;
   left: -10%;
   animation:
@@ -30,9 +28,9 @@
 }
 
 .blob-2 {
-  width: clamp(170px, 50vw, 500px);
-  height: clamp(170px, 50vw, 500px);
-  background: radial-gradient(circle, #e040fb, #ff4081);
+  width: clamp(280px, 75vw, 500px);
+  height: clamp(280px, 75vw, 500px);
+  background: radial-gradient(circle 50% at center, #e040fb, #ff4081);
   bottom: -10%;
   right: -5%;
   animation:
@@ -42,9 +40,9 @@
 }
 
 .blob-3 {
-  width: clamp(150px, 45vw, 450px);
-  height: clamp(150px, 45vw, 450px);
-  background: radial-gradient(circle, #ff9800, #f06292);
+  width: clamp(260px, 70vw, 450px);
+  height: clamp(260px, 70vw, 450px);
+  background: radial-gradient(circle 50% at center, #ff9800, #f06292);
   top: 40%;
   left: 30%;
   animation:
@@ -54,9 +52,9 @@
 }
 
 .blob-4 {
-  width: clamp(120px, 35vw, 350px);
-  height: clamp(120px, 35vw, 350px);
-  background: radial-gradient(circle, #ce93d8, #ff7043);
+  width: clamp(240px, 65vw, 350px);
+  height: clamp(240px, 65vw, 350px);
+  background: radial-gradient(circle 50% at center, #ce93d8, #ff7043);
   top: 10%;
   right: 15%;
   animation:
@@ -66,9 +64,9 @@
 }
 
 .blob-5 {
-  width: clamp(140px, 42vw, 420px);
-  height: clamp(140px, 42vw, 420px);
-  background: radial-gradient(circle, #ff7a45, #d946ef);
+  width: clamp(260px, 72vw, 420px);
+  height: clamp(260px, 72vw, 420px);
+  background: radial-gradient(circle 50% at center, #ff7a45, #d946ef);
   top: 62%;
   left: -8%;
   animation:
@@ -78,9 +76,9 @@
 }
 
 .blob-6 {
-  width: clamp(130px, 38vw, 380px);
-  height: clamp(130px, 38vw, 380px);
-  background: radial-gradient(circle, #ff9b42, #c86dff);
+  width: clamp(250px, 68vw, 380px);
+  height: clamp(250px, 68vw, 380px);
+  background: radial-gradient(circle 50% at center, #ff9b42, #c86dff);
   top: -14%;
   left: 42%;
   animation:
@@ -90,9 +88,9 @@
 }
 
 .blob-7 {
-  width: clamp(110px, 34vw, 330px);
-  height: clamp(110px, 34vw, 330px);
-  background: radial-gradient(circle, #ffa53d, #ff4f9f);
+  width: clamp(230px, 62vw, 330px);
+  height: clamp(230px, 62vw, 330px);
+  background: radial-gradient(circle 50% at center, #ffa53d, #ff4f9f);
   bottom: -12%;
   right: 28%;
   animation:
@@ -102,9 +100,9 @@
 }
 
 .blob-8 {
-  width: clamp(160px, 46vw, 460px);
-  height: clamp(160px, 46vw, 460px);
-  background: radial-gradient(circle, #ffb04a, #d06bff);
+  width: clamp(280px, 78vw, 460px);
+  height: clamp(280px, 78vw, 460px);
+  background: radial-gradient(circle 50% at center, #ffb04a, #d06bff);
   top: 28%;
   right: -12%;
   animation:
@@ -114,27 +112,27 @@
 }
 
 @keyframes pulse1 {
-  0%   { opacity: 0.62; filter: blur(54px) brightness(0.95) saturate(1.02); }
-  50%  { opacity: 0.78; filter: blur(66px) brightness(1.09) saturate(1.12); }
-  100% { opacity: 0.62; filter: blur(54px) brightness(0.95) saturate(1.02); }
+  0%   { opacity: 0.72; filter: blur(54px) brightness(1.05) saturate(1.05); }
+  50%  { opacity: 0.86; filter: blur(66px) brightness(1.18) saturate(1.18); }
+  100% { opacity: 0.72; filter: blur(54px) brightness(1.05) saturate(1.05); }
 }
 
 @keyframes pulse2 {
-  0%   { opacity: 0.58; filter: blur(52px) brightness(0.92) saturate(1.02); }
-  50%  { opacity: 0.76; filter: blur(68px) brightness(1.1) saturate(1.14); }
-  100% { opacity: 0.58; filter: blur(52px) brightness(0.92) saturate(1.02); }
+  0%   { opacity: 0.70; filter: blur(52px) brightness(1.04) saturate(1.05); }
+  50%  { opacity: 0.84; filter: blur(68px) brightness(1.18) saturate(1.2); }
+  100% { opacity: 0.70; filter: blur(52px) brightness(1.04) saturate(1.05); }
 }
 
 @keyframes pulse3 {
-  0%   { opacity: 0.6; filter: blur(50px) brightness(0.94) saturate(1.02); }
-  50%  { opacity: 0.8; filter: blur(64px) brightness(1.11) saturate(1.13); }
-  100% { opacity: 0.6; filter: blur(50px) brightness(0.94) saturate(1.02); }
+  0%   { opacity: 0.71; filter: blur(50px) brightness(1.05) saturate(1.05); }
+  50%  { opacity: 0.87; filter: blur(64px) brightness(1.19) saturate(1.18); }
+  100% { opacity: 0.71; filter: blur(50px) brightness(1.05) saturate(1.05); }
 }
 
 @keyframes pulse4 {
-  0%   { opacity: 0.56; filter: blur(48px) brightness(0.9) saturate(1); }
-  50%  { opacity: 0.74; filter: blur(62px) brightness(1.08) saturate(1.12); }
-  100% { opacity: 0.56; filter: blur(48px) brightness(0.9) saturate(1); }
+  0%   { opacity: 0.69; filter: blur(48px) brightness(1.03) saturate(1.04); }
+  50%  { opacity: 0.83; filter: blur(62px) brightness(1.17) saturate(1.17); }
+  100% { opacity: 0.69; filter: blur(48px) brightness(1.03) saturate(1.04); }
 }
 
 @keyframes drift1 {
