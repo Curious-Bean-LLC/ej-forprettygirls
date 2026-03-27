@@ -18,7 +18,7 @@
 .blob-1 {
   width: clamp(320px, 85vw, 600px);
   height: clamp(320px, 85vw, 600px);
-  background: radial-gradient(circle 50% at center, #ff6b35, #e040fb);
+  background: radial-gradient(circle at center, #ff6b35 0%, #e040fb 50%, transparent 100%);
   top: -10%;
   left: -10%;
   animation:
@@ -30,7 +30,7 @@
 .blob-2 {
   width: clamp(280px, 75vw, 500px);
   height: clamp(280px, 75vw, 500px);
-  background: radial-gradient(circle 50% at center, #e040fb, #ff4081);
+  background: radial-gradient(circle at center, #e040fb 0%, #ff4081 50%, transparent 100%);
   bottom: -10%;
   right: -5%;
   animation:
@@ -42,7 +42,7 @@
 .blob-3 {
   width: clamp(260px, 70vw, 450px);
   height: clamp(260px, 70vw, 450px);
-  background: radial-gradient(circle 50% at center, #ff9800, #f06292);
+  background: radial-gradient(circle at center, #ff9800 0%, #f06292 50%, transparent 100%);
   top: 40%;
   left: 30%;
   animation:
@@ -54,7 +54,7 @@
 .blob-4 {
   width: clamp(240px, 65vw, 350px);
   height: clamp(240px, 65vw, 350px);
-  background: radial-gradient(circle 50% at center, #ce93d8, #ff7043);
+  background: radial-gradient(circle at center, #ce93d8 0%, #ff7043 50%, transparent 100%);
   top: 10%;
   right: 15%;
   animation:
@@ -66,7 +66,7 @@
 .blob-5 {
   width: clamp(260px, 72vw, 420px);
   height: clamp(260px, 72vw, 420px);
-  background: radial-gradient(circle 50% at center, #ff7a45, #d946ef);
+  background: radial-gradient(circle at center, #ff7a45 0%, #d946ef 50%, transparent 100%);
   top: 62%;
   left: -8%;
   animation:
@@ -78,7 +78,7 @@
 .blob-6 {
   width: clamp(250px, 68vw, 380px);
   height: clamp(250px, 68vw, 380px);
-  background: radial-gradient(circle 50% at center, #ff9b42, #c86dff);
+  background: radial-gradient(circle at center, #ff9b42 0%, #c86dff 50%, transparent 100%);
   top: -14%;
   left: 42%;
   animation:
@@ -90,7 +90,7 @@
 .blob-7 {
   width: clamp(230px, 62vw, 330px);
   height: clamp(230px, 62vw, 330px);
-  background: radial-gradient(circle 50% at center, #ffa53d, #ff4f9f);
+  background: radial-gradient(circle at center, #ffa53d 0%, #ff4f9f 50%, transparent 100%);
   bottom: -12%;
   right: 28%;
   animation:
@@ -102,7 +102,7 @@
 .blob-8 {
   width: clamp(280px, 78vw, 460px);
   height: clamp(280px, 78vw, 460px);
-  background: radial-gradient(circle 50% at center, #ffb04a, #d06bff);
+  background: radial-gradient(circle at center, #ffb04a 0%, #d06bff 50%, transparent 100%);
   top: 28%;
   right: -12%;
   animation:
