@@ -1,170 +1,12 @@
-.lava-bg {
+.bg-cover-blur {
   position: fixed;
   inset: 0;
-  z-index: -1;
-  background: #1a0a2e;
-  overflow: hidden;
-}
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  mix-blend-mode: screen;
-  opacity: 0.75;
-  filter: blur(60px);
-  transform-origin: center;
-}
-
-.blob-1 {
-  width: clamp(320px, 85vw, 600px);
-  height: clamp(320px, 85vw, 600px);
-  background: radial-gradient(circle at center, #ff6b35 0%, #e040fb 50%, transparent 100%);
-  top: -10%;
-  left: -10%;
-  animation:
-    drift1 18s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    pulse1 8s ease-in-out infinite;
-  animation-delay: 0s, -1.6s;
-}
-
-.blob-2 {
-  width: clamp(280px, 75vw, 500px);
-  height: clamp(280px, 75vw, 500px);
-  background: radial-gradient(circle at center, #e040fb 0%, #ff4081 50%, transparent 100%);
-  bottom: -10%;
-  right: -5%;
-  animation:
-    drift2 22s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    pulse2 9.5s ease-in-out infinite;
-  animation-delay: -3.5s, -2.4s;
-}
-
-.blob-3 {
-  width: clamp(260px, 70vw, 450px);
-  height: clamp(260px, 70vw, 450px);
-  background: radial-gradient(circle at center, #ff9800 0%, #f06292 50%, transparent 100%);
-  top: 40%;
-  left: 30%;
-  animation:
-    drift3 16s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    pulse3 7.5s ease-in-out infinite;
-  animation-delay: -2s, -0.8s;
-}
-
-.blob-4 {
-  width: clamp(240px, 65vw, 350px);
-  height: clamp(240px, 65vw, 350px);
-  background: radial-gradient(circle at center, #ce93d8 0%, #ff7043 50%, transparent 100%);
-  top: 10%;
-  right: 15%;
-  animation:
-    drift4 20s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    pulse4 10s ease-in-out infinite;
-  animation-delay: -4.2s, -3.1s;
-}
-
-.blob-5 {
-  width: clamp(260px, 72vw, 420px);
-  height: clamp(260px, 72vw, 420px);
-  background: radial-gradient(circle at center, #ff7a45 0%, #d946ef 50%, transparent 100%);
-  top: 62%;
-  left: -8%;
-  animation:
-    drift2 24s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    pulse1 9.2s ease-in-out infinite;
-  animation-delay: -6.6s, -4.4s;
-}
-
-.blob-6 {
-  width: clamp(250px, 68vw, 380px);
-  height: clamp(250px, 68vw, 380px);
-  background: radial-gradient(circle at center, #ff9b42 0%, #c86dff 50%, transparent 100%);
-  top: -14%;
-  left: 42%;
-  animation:
-    drift3 19s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    pulse2 8.4s ease-in-out infinite;
-  animation-delay: -7.8s, -5.3s;
-}
-
-.blob-7 {
-  width: clamp(230px, 62vw, 330px);
-  height: clamp(230px, 62vw, 330px);
-  background: radial-gradient(circle at center, #ffa53d 0%, #ff4f9f 50%, transparent 100%);
-  bottom: -12%;
-  right: 28%;
-  animation:
-    drift1 17s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    pulse3 7.9s ease-in-out infinite;
-  animation-delay: -5.1s, -2.2s;
-}
-
-.blob-8 {
-  width: clamp(280px, 78vw, 460px);
-  height: clamp(280px, 78vw, 460px);
-  background: radial-gradient(circle at center, #ffb04a 0%, #d06bff 50%, transparent 100%);
-  top: 28%;
-  right: -12%;
-  animation:
-    drift4 26s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite,
-    pulse4 11.2s ease-in-out infinite;
-  animation-delay: -9.3s, -6.1s;
-}
-
-@keyframes pulse1 {
-  0%   { opacity: 0.72; filter: blur(54px) brightness(1.05) saturate(1.05); }
-  50%  { opacity: 0.86; filter: blur(66px) brightness(1.18) saturate(1.18); }
-  100% { opacity: 0.72; filter: blur(54px) brightness(1.05) saturate(1.05); }
-}
-
-@keyframes pulse2 {
-  0%   { opacity: 0.70; filter: blur(52px) brightness(1.04) saturate(1.05); }
-  50%  { opacity: 0.84; filter: blur(68px) brightness(1.18) saturate(1.2); }
-  100% { opacity: 0.70; filter: blur(52px) brightness(1.04) saturate(1.05); }
-}
-
-@keyframes pulse3 {
-  0%   { opacity: 0.71; filter: blur(50px) brightness(1.05) saturate(1.05); }
-  50%  { opacity: 0.87; filter: blur(64px) brightness(1.19) saturate(1.18); }
-  100% { opacity: 0.71; filter: blur(50px) brightness(1.05) saturate(1.05); }
-}
-
-@keyframes pulse4 {
-  0%   { opacity: 0.69; filter: blur(48px) brightness(1.03) saturate(1.04); }
-  50%  { opacity: 0.83; filter: blur(62px) brightness(1.17) saturate(1.17); }
-  100% { opacity: 0.69; filter: blur(48px) brightness(1.03) saturate(1.04); }
-}
-
-@keyframes drift1 {
-  0%   { transform: translate(0, 0) scale(1); }
-  25%  { transform: translate(18%, 20%) scale(1.08); }
-  50%  { transform: translate(34%, 8%) scale(0.97); }
-  75%  { transform: translate(14%, -12%) scale(1.04); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes drift2 {
-  0%   { transform: translate(0, 0) scale(1); }
-  25%  { transform: translate(-15%, -18%) scale(1.07); }
-  50%  { transform: translate(-30%, -34%) scale(0.95); }
-  75%  { transform: translate(-10%, -14%) scale(1.03); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes drift3 {
-  0%   { transform: translate(0, 0) scale(1); }
-  25%  { transform: translate(-22%, 16%) scale(1.06); }
-  50%  { transform: translate(-36%, 30%) scale(0.98); }
-  75%  { transform: translate(-8%, 10%) scale(1.03); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-@keyframes drift4 {
-  0%   { transform: translate(0, 0) scale(1); }
-  25%  { transform: translate(-16%, 22%) scale(1.05); }
-  50%  { transform: translate(-30%, 36%) scale(0.96); }
-  75%  { transform: translate(-10%, 14%) scale(1.02); }
-  100% { transform: translate(0, 0) scale(1); }
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(28px) brightness(0.55);
+  transform: scale(1.08);
+  z-index: -2;
 }
 
 .counter {
@@ -225,16 +67,30 @@
   }
 }
 
+.cover-art {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 6px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+.trailer-video {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 6px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
 #center {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  place-content: center;
-  place-items: center;
+  align-items: center;
+  padding: 60px 20px 80px;
   flex-grow: 1;
 
   @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
+    padding: 40px 20px 60px;
     gap: 18px;
   }
 }
