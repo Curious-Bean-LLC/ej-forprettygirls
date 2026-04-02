@@ -11,14 +11,12 @@
 
 .cover-art {
   width: 100%;
-  max-width: 340px;
   border-radius: 6px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
 }
 
 .trailer-video {
   width: 100%;
-  max-width: 340px;
   border-radius: 6px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
 }
@@ -26,9 +24,139 @@
 #center {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   align-items: center;
-  padding: 60px 20px 80px;
+  padding: 60px 40px 80px;
   flex-grow: 1;
 
+  @media (max-width: 1024px) {
+    padding: 40px 20px 60px;
+  }
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+  max-width: 960px;
+  align-items: start;
+
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.col-left,
+.col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.music-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 16px 24px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.player-title {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffe4ec;
+  opacity: 0.75;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.player-controls button {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffe4ec;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.player-controls button:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.player-controls button.play-pause {
+  width: 52px;
+  height: 52px;
+}
+
+.player-scrubber {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.player-scrubber input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 228, 236, 0.8) 0%,
+    rgba(255, 228, 236, 0.8) var(--progress),
+    rgba(255, 255, 255, 0.2) var(--progress),
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  cursor: pointer;
+  outline: none;
+}
+
+.player-scrubber input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffe4ec;
+  cursor: pointer;
+}
+
+.player-scrubber input[type='range']::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #ffe4ec;
+  cursor: pointer;
+}
+
+.player-times {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  color: #ffe4ec;
+  opacity: 0.5;
 }
