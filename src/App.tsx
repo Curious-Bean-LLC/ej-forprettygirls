@@ -14,6 +14,77 @@ const audioUrl = new URL(
   import.meta.url,
 ).href
 
+const scriptLines = [
+  {
+    speaker: 'NARRATION',
+    text: 'INT. RESTAURANT - NIGHT. Sheena and Em are on a date at a restaurant, reminiscing on memorable dates and their shared appreciation for dance.',
+  },
+  {
+    speaker: 'Sheena',
+    text: "So what about you? When's the last time you had a really good time on a date? Like what did you do?",
+  },
+  {
+    speaker: 'Em',
+    text: 'Hmmm. Okay this is gonna sound mad simple, but we went dancing. But like actually danced. It was hella fun.',
+  },
+  {
+    speaker: 'Sheena',
+    text: 'Oh, so you like to dance?',
+  },
+  {
+    speaker: 'Em',
+    text: 'You can say that.',
+  },
+  {
+    speaker: 'Sheena',
+    text: 'But what would you say?',
+  },
+  {
+    speaker: 'Em',
+    text: "I mean, I don't go dancing often but there is something freeing about it. Especially when you got a healthy relationship with the dance floor.",
+  },
+  {
+    speaker: 'Sheena',
+    text: 'I feel that, but that requires you to stop caring about the people around you.',
+  },
+  {
+    speaker: 'Em',
+    text: 'Exactly! You get it. So do you like to dance?',
+  },
+  {
+    speaker: 'Sheena',
+    text: 'Like is definitely an understatement.',
+  },
+  {
+    speaker: 'Em',
+    text: "I can definitely see you in the middle of the dance floor once they get the circle going. You know what's crazy though?",
+  },
+  {
+    speaker: 'Sheena',
+    text: 'What?',
+  },
+  {
+    speaker: 'Em',
+    text: "That people be at the dance spots and don't dance anymore.",
+  },
+  {
+    speaker: 'Sheena',
+    text: "I know, right? That's so wild to me. Matter of fact, take me dancing. I'll be so tired after you ain't even gotta feed me.",
+  },
+  {
+    speaker: 'Em',
+    text: 'If you wanna go dancing with me, just say that.',
+  },
+  {
+    speaker: 'Sheena',
+    text: 'If you wanna meet me on the dance floor, just say that.',
+  },
+  {
+    speaker: 'Em',
+    text: 'Touché.',
+  },
+] as const
+
 function App() {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [playing, setPlaying] = useState(false)
@@ -72,22 +143,36 @@ function App() {
               fontSize: 'clamp(1.75rem, 5vw, 3.5rem)',
             }}
           >
-            meet me on the dance floor
+            for pretty girls that don't dance
           </h1>
-          <p
-            className='uppercase tracking-widest mb-2'
-            style={{
-              fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-              color: 'var(--yellow)',
-              textShadow: '1px 1px 6px #1a0a2e',
-              fontSize: 'clamp(0.85rem, 2.5vw, 1.25rem)',
-            }}
-          >
-            an emmitt james project
-          </p>
         </div>
         <div className='two-col'>
+          <div className='col-right mt-2'>
+            <video className='trailer-video' controls playsInline>
+              <source src={trailerVideoUrl} type='video/quicktime' />
+              <source src={trailerVideoUrl} type='video/mp4' />
+            </video>
+            <section className='script-card' aria-label='Scene script'>
+              <div className='script-body'>
+                {scriptLines.map((line, idx) => (
+                  <p key={`${line.speaker}-${idx}`} className='script-line'>
+                    <span
+                      className={`speaker speaker-${line.speaker.toLowerCase()}`}
+                    >
+                      {line.speaker}
+                    </span>
+                    <span className='line-text'>{line.text}</span>
+                  </p>
+                ))}
+              </div>
+            </section>
+          </div>
           <div className='col-left'>
+            <img
+              className='cover-art'
+              src={coverImageUrl}
+              alt='Meet Me On The Dance Floor'
+            />
             <div className='music-player'>
               <audio
                 ref={audioRef}
@@ -98,8 +183,29 @@ function App() {
                 }
                 onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
               />
-              {/* <span className="player-title">Meet Me On The Dance Floor</span> */}
-
+              <span className='player-title'>Meet Me On The Dance Floor</span>
+              <div className='player-scrubber'>
+                <input
+                  type='range'
+                  min={0}
+                  max={duration || 0}
+                  step={0.01}
+                  value={currentTime}
+                  onChange={scrub}
+                  style={
+                    {
+                      '--progress': duration
+                        ? `${(currentTime / duration) * 100}%`
+                        : '0%',
+                    } as React.CSSProperties
+                  }
+                  aria-label='Seek'
+                />
+                <div className='player-times'>
+                  <span>{formatTime(currentTime)}</span>
+                  <span>{formatTime(duration)}</span>
+                </div>
+              </div>
               <div className='player-controls'>
                 <button onClick={restart} aria-label='Restart'>
                   <svg
@@ -137,40 +243,7 @@ function App() {
                   )}
                 </button>
               </div>
-              <div className='player-scrubber'>
-                <input
-                  type='range'
-                  min={0}
-                  max={duration || 0}
-                  step={0.01}
-                  value={currentTime}
-                  onChange={scrub}
-                  style={
-                    {
-                      '--progress': duration
-                        ? `${(currentTime / duration) * 100}%`
-                        : '0%',
-                    } as React.CSSProperties
-                  }
-                  aria-label='Seek'
-                />
-                <div className='player-times'>
-                  <span>{formatTime(currentTime)}</span>
-                  <span>{formatTime(duration)}</span>
-                </div>
-              </div>
             </div>
-            <img
-              className='cover-art'
-              src={coverImageUrl}
-              alt='Meet Me On The Dance Floor'
-            />
-          </div>
-          <div className='col-right mt-2'>
-            <video className='trailer-video' controls playsInline>
-              <source src={trailerVideoUrl} type='video/quicktime' />
-              <source src={trailerVideoUrl} type='video/mp4' />
-            </video>
           </div>
         </div>
       </section>

@@ -32,6 +32,11 @@
   --yellow-rgb: 255, 214, 10;
   --green: #2dc653;
   --purple: rgba(110, 24, 95, 0.72);
+  --script-font: 'Inconsolata', 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --script-bg: rgba(23, 8, 36, 0.75);
+  --speaker-em: #2dc653;
+  --speaker-sheena: #e63946;
+  --speaker-narration: #ffd60a;
 }
 
 .bg-cover-blur {
@@ -59,6 +64,52 @@
     0 0 0 5px var(--yellow),
     0 0 0 8px var(--green),
     0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+.script-card {
+  width: 100%;
+  border-radius: 10px;
+  padding: 16px;
+  font-family: var(--script-font);
+  text-align: center;
+  background: var(--script-bg);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+.script-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.script-line {
+  margin: 0;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.speaker {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.line-text {
+  display: block;
+}
+
+.speaker-em {
+  color: var(--speaker-em);
+}
+
+.speaker-sheena {
+  color: var(--speaker-sheena);
+}
+
+.speaker-narration {
+  color: var(--speaker-narration);
 }
 
 #center {
@@ -95,6 +146,10 @@
   gap: 16px;
 }
 
+.col-right {
+  gap: 32px;
+}
+
 .music-player {
   display: flex;
   flex-direction: column;
@@ -111,7 +166,7 @@
 }
 
 .player-title {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Barrio", sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
