@@ -18,23 +18,7 @@
   --speaker-narration: var(--yellow);
 }
 
-.bg-cover-blur {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(28px) brightness(0.55);
-  transform: scale(1.08);
-  z-index: -2;
-}
-
-.cover-art {
-  width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
-}
-
+/* Video with tri-color border effect */
 .trailer-video {
   width: 100%;
   border-radius: 6px;
@@ -50,64 +34,13 @@
   object-fit: contain;
 }
 
-.site-footer {
-  margin-top: 60px;
-  padding: 32px 20px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.site-footer p {
-  margin: 4px 0;
-}
-
-.site-footer a {
-  color: var(--yellow);
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.site-footer a:hover {
-  opacity: 0.8;
-  text-decoration: underline;
-}
-
+/* Script card - uses CSS var for background and font */
 .script-card {
-  width: 100%;
-  border-radius: 10px;
-  padding: 16px;
   font-family: var(--script-font);
-  text-align: center;
   background: var(--script-bg);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
 }
 
-.script-body {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.script-line {
-  margin: 0;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.speaker {
-  display: block;
-  margin-bottom: 2px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.line-text {
-  display: block;
-}
-
+/* Speaker colors - use CSS custom properties */
 .speaker-em {
   color: var(--speaker-em);
 }
@@ -120,64 +53,22 @@
   color: var(--speaker-narration);
 }
 
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  padding: 60px 40px 80px;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 40px 20px 60px;
-  }
-}
-
-.single-col {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 100%;
-  max-width: 720px;
-  align-items: stretch;
-}
-
+/* Music player - uses CSS vars for background and backdrop filter */
 .music-player {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
   background: var(--purple);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 14px;
-  padding: 16px 24px;
-  width: 100%;
-  box-sizing: border-box;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .player-title {
   font-family: "Barrio", sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
   color: var(--yellow);
-  opacity: 0.75;
 }
 
-.player-controls {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.player-controls button {
+/* Player buttons */
+.player-btn {
   background: rgba(var(--yellow-rgb), 0.15);
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,23 +77,12 @@
   transition: background 0.2s;
 }
 
-.player-controls button:hover {
+.player-btn:hover {
   background: rgba(var(--yellow-rgb), 0.28);
 }
 
-.player-controls button.play-pause {
-  width: 52px;
-  height: 52px;
-}
-
-.player-scrubber {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.player-scrubber input[type='range'] {
+/* Custom range input styling */
+.player-scrubber-input {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
@@ -219,7 +99,7 @@
   outline: none;
 }
 
-.player-scrubber input[type='range']::-webkit-slider-thumb {
+.player-scrubber-input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 12px;
@@ -229,7 +109,7 @@
   cursor: pointer;
 }
 
-.player-scrubber input[type='range']::-moz-range-thumb {
+.player-scrubber-input::-moz-range-thumb {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -239,11 +119,18 @@
 }
 
 .player-times {
-  display: flex;
-  justify-content: space-between;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.05em;
   color: var(--yellow);
-  opacity: 0.5;
+}
+
+/* Footer links */
+.site-footer-link {
+  color: var(--yellow);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.site-footer-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }

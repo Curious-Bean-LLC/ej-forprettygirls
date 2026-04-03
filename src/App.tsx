@@ -131,12 +131,12 @@ function App() {
   return (
     <>
       <img
-        className='bg-cover-blur'
+        className='fixed inset-0 w-full h-full object-cover blur-[28px] brightness-[0.55] scale-[1.08] -z-2'
         src={coverImageUrl}
         aria-hidden='true'
         alt='meet me on the dance floor cover image spread across background and blurred'
       />
-      <section id='center'>
+      <section className='flex flex-col gap-8 items-center px-10 py-15 pb-20 grow max-[1024px]:px-5 max-[1024px]:py-10 max-[1024px]:pb-15'>
         <div>
           <h1
             className='uppercase tracking-widest'
@@ -150,7 +150,7 @@ function App() {
             for pretty girls that don't dance
           </h1>
         </div>
-        <div className='single-col'>
+        <div className='flex flex-col gap-8 w-full max-w-180'>
           <h2
             className='uppercase tracking-widest'
             style={{
@@ -175,16 +175,16 @@ function App() {
           >
             Script
           </h2>
-          <section className='script-card' aria-label='Scene script'>
-            <div className='script-body'>
+          <section className='script-card w-full rounded-[10px] p-4 text-center shadow-[0_8px_28px_rgba(0,0,0,0.45)]' aria-label='Scene script'>
+            <div className='flex flex-col gap-2.5'>
               {scriptLines.map((line, idx) => (
-                <p key={`${line.speaker}-${idx}`} className='script-line'>
+                <p key={`${line.speaker}-${idx}`} className='m-0 leading-[1.45] text-white/95'>
                   <span
-                    className={`speaker speaker-${line.speaker.toLowerCase()}`}
+                    className={`block mb-0.5 font-bold tracking-wider uppercase speaker-${line.speaker.toLowerCase()}`}
                   >
                     {line.speaker}
                   </span>
-                  <span className='line-text'>{line.text}</span>
+                  <span className='block'>{line.text}</span>
                 </p>
               ))}
             </div>
@@ -200,7 +200,7 @@ function App() {
             Cover
           </h2>
           <img
-            className='cover-art'
+            className='w-full rounded-md shadow-[0_8px_40px_rgba(0,0,0,0.6)]'
             src={coverImageUrl}
             alt='Meet Me On The Dance Floor'
           />
@@ -214,7 +214,7 @@ function App() {
           >
             Listen
           </h2>
-          <div className='music-player'>
+          <div className='music-player flex flex-col items-center gap-3 rounded-[14px] p-4 px-6 w-full shadow-[0_4px_24px_rgba(0,0,0,0.4)] border border-white/15'>
             <audio
               ref={audioRef}
               src={audioUrl}
@@ -222,9 +222,10 @@ function App() {
               onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
               onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
             />
-            <span className='player-title'>Meet Me On The Dance Floor</span>
-            <div className='player-scrubber'>
+            <span className='player-title text-xs tracking-[0.15em] uppercase opacity-75'>Meet Me On The Dance Floor</span>
+            <div className='w-full flex flex-col gap-1'>
               <input
+                className='player-scrubber-input'
                 type='range'
                 min={0}
                 max={duration || 0}
@@ -240,13 +241,13 @@ function App() {
                 }
                 aria-label='Seek'
               />
-              <div className='player-times'>
+              <div className='player-times flex justify-between text-[0.65rem] tracking-wider opacity-50'>
                 <span>{formatTime(currentTime)}</span>
                 <span>{formatTime(duration)}</span>
               </div>
             </div>
-            <div className='player-controls'>
-              <button onClick={restart} aria-label='Restart'>
+            <div className='flex items-center gap-4'>
+              <button className='player-btn w-10 h-10' onClick={restart} aria-label='Restart'>
                 <svg
                   viewBox='0 0 24 24'
                   fill='currentColor'
@@ -258,7 +259,7 @@ function App() {
               </button>
               <button
                 onClick={togglePlay}
-                className='play-pause'
+                className='player-btn w-13 h-13'
                 aria-label={playing ? 'Pause' : 'Play'}
               >
                 {playing ? (
@@ -299,16 +300,16 @@ function App() {
           </video>
         </div>
       </section>
-      <footer className='site-footer uppercase'>
-        <p>© 2026</p>
-        <p>
-          <a href='https://emmittjames.com' target='_blank' rel='noopener noreferrer'>
+      <footer className='mt-15 py-8 px-5 text-center text-white/70 text-sm leading-relaxed uppercase'>
+        <p className='my-1'>© 2026</p>
+        <p className='my-1'>
+          <a className='site-footer-link' href='https://emmittjames.com' target='_blank' rel='noopener noreferrer'>
             emmittjames.com
           </a>
         </p>
-        <p>
+        <p className='my-1'>
           brought to you by{' '}
-          <a href='https://curiousbean.dev' target='_blank' rel='noopener noreferrer'>
+          <a className='site-footer-link' href='https://curiousbean.dev' target='_blank' rel='noopener noreferrer'>
             curious bean llc
           </a>
         </p>
