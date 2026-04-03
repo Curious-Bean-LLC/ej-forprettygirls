@@ -2,19 +2,19 @@ import { useRef, useState } from 'react'
 import './App.css'
 
 const coverImageUrl = new URL(
-  './assets/Meet Me On The Dance Floor Cover.png',
+  './assets/mmotdf-cover.png',
   import.meta.url,
 ).href
 const trailerVideoUrl = new URL(
-  './assets/MMOTDF4 (TRAILER).mov',
+  './assets/mmotdf-trailer.mov',
   import.meta.url,
 ).href
 const audioUrl = new URL(
-  './assets/Meet Me On The Dance Floor (master.2).mp3',
+  './assets/mmotdf.mp3',
   import.meta.url,
 ).href
 const bloopersVideoUrl = new URL(
-  './assets/big sheen blooperz.mov',
+  './assets/mmotdf-bloopers.mov',
   import.meta.url,
 ).href
 
@@ -134,7 +134,7 @@ function App() {
         className='bg-cover-blur'
         src={coverImageUrl}
         aria-hidden='true'
-        alt=''
+        alt='meet me on the dance floor cover image spread across background and blurred'
       />
       <section id='center'>
         <div>

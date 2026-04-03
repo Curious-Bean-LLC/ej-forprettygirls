@@ -5,27 +5,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Bungee Shade';
-  src: url('./assets/Bungee_Shade/BungeeShade-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Joti One';
-  src: url('./assets/Joti_One/JotiOne-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Rock 3D';
-  src: url('./assets/Rock_3D/Rock3D-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 :root {
   --red: #e63946;
   --yellow: #ffd60a;
@@ -34,9 +13,9 @@
   --purple: rgba(110, 24, 95, 0.72);
   --script-font: 'Inconsolata', 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --script-bg: rgba(23, 8, 36, 0.75);
-  --speaker-em: #2dc653;
-  --speaker-sheena: #e63946;
-  --speaker-narration: #ffd60a;
+  --speaker-em: var(--green);
+  --speaker-sheena: var(--red);
+  --speaker-narration: var(--yellow);
 }
 
 .bg-cover-blur {
