@@ -71,6 +71,30 @@
   object-fit: contain;
 }
 
+.site-footer {
+  margin-top: 60px;
+  padding: 32px 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.site-footer p {
+  margin: 4px 0;
+}
+
+.site-footer a {
+  color: var(--yellow);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.site-footer a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 .script-card {
   width: 100%;
   border-radius: 10px;

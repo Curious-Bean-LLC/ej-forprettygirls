@@ -298,6 +298,20 @@ function App() {
           </video>
         </div>
       </section>
+      <footer className='site-footer uppercase'>
+        <p>© 2026</p>
+        <p>
+          <a href='https://emmittjames.com' target='_blank' rel='noopener noreferrer'>
+            emmittjames.com
+          </a>
+        </p>
+        <p>
+          brought to you by{' '}
+          <a href='https://curiousbean.dev' target='_blank' rel='noopener noreferrer'>
+            curious bean llc
+          </a>
+        </p>
+      </footer>
     </>
   )
 }
