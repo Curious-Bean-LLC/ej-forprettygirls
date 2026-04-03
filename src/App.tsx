@@ -13,6 +13,10 @@ const audioUrl = new URL(
   './assets/Meet Me On The Dance Floor (master.2).mp3',
   import.meta.url,
 ).href
+const bloopersVideoUrl = new URL(
+  './assets/big sheen blooperz.mov',
+  import.meta.url,
+).href
 
 const scriptLines = [
   {
@@ -290,11 +294,8 @@ function App() {
             Bloopers
           </h2>
           <video className='trailer-video bloopers-video' controls playsInline>
-            <source
-              src='/src/assets/big sheen blooperz.mov'
-              type='video/quicktime'
-            />
-            <source src='/src/assets/big sheen blooperz.mov' type='video/mp4' />
+            <source src={bloopersVideoUrl} type='video/quicktime' />
+            <source src={bloopersVideoUrl} type='video/mp4' />
           </video>
         </div>
       </section>
