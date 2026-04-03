@@ -146,105 +146,156 @@ function App() {
             for pretty girls that don't dance
           </h1>
         </div>
-        <div className='two-col'>
-          <div className='col-right mt-2'>
-            <video className='trailer-video' controls playsInline>
-              <source src={trailerVideoUrl} type='video/quicktime' />
-              <source src={trailerVideoUrl} type='video/mp4' />
-            </video>
-            <section className='script-card' aria-label='Scene script'>
-              <div className='script-body'>
-                {scriptLines.map((line, idx) => (
-                  <p key={`${line.speaker}-${idx}`} className='script-line'>
-                    <span
-                      className={`speaker speaker-${line.speaker.toLowerCase()}`}
-                    >
-                      {line.speaker}
-                    </span>
-                    <span className='line-text'>{line.text}</span>
-                  </p>
-                ))}
-              </div>
-            </section>
-          </div>
-          <div className='col-left'>
-            <img
-              className='cover-art'
-              src={coverImageUrl}
-              alt='Meet Me On The Dance Floor'
+        <div className='single-col'>
+          <h2
+            className='uppercase tracking-widest'
+            style={{
+              fontFamily: 'Barrio',
+              color: 'var(--yellow)',
+              textShadow: '2px 2px 8px #1a0a2e',
+            }}
+          >
+            Trailer
+          </h2>
+          <video className='trailer-video' controls playsInline>
+            <source src={trailerVideoUrl} type='video/quicktime' />
+            <source src={trailerVideoUrl} type='video/mp4' />
+          </video>
+          <h2
+            className='uppercase tracking-widest'
+            style={{
+              fontFamily: 'Barrio',
+              color: 'var(--yellow)',
+              textShadow: '2px 2px 8px #1a0a2e',
+            }}
+          >
+            Script
+          </h2>
+          <section className='script-card' aria-label='Scene script'>
+            <div className='script-body'>
+              {scriptLines.map((line, idx) => (
+                <p key={`${line.speaker}-${idx}`} className='script-line'>
+                  <span
+                    className={`speaker speaker-${line.speaker.toLowerCase()}`}
+                  >
+                    {line.speaker}
+                  </span>
+                  <span className='line-text'>{line.text}</span>
+                </p>
+              ))}
+            </div>
+          </section>
+          <h2
+            className='uppercase tracking-widest'
+            style={{
+              fontFamily: 'Barrio',
+              color: 'var(--yellow)',
+              textShadow: '2px 2px 8px #1a0a2e',
+            }}
+          >
+            Cover
+          </h2>
+          <img
+            className='cover-art'
+            src={coverImageUrl}
+            alt='Meet Me On The Dance Floor'
+          />
+          <h2
+            className='uppercase tracking-widest'
+            style={{
+              fontFamily: 'Barrio',
+              color: 'var(--yellow)',
+              textShadow: '2px 2px 8px #1a0a2e',
+            }}
+          >
+            Listen
+          </h2>
+          <div className='music-player'>
+            <audio
+              ref={audioRef}
+              src={audioUrl}
+              onEnded={() => setPlaying(false)}
+              onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
+              onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
             />
-            <div className='music-player'>
-              <audio
-                ref={audioRef}
-                src={audioUrl}
-                onEnded={() => setPlaying(false)}
-                onTimeUpdate={(e) =>
-                  setCurrentTime(e.currentTarget.currentTime)
+            <span className='player-title'>Meet Me On The Dance Floor</span>
+            <div className='player-scrubber'>
+              <input
+                type='range'
+                min={0}
+                max={duration || 0}
+                step={0.01}
+                value={currentTime}
+                onChange={scrub}
+                style={
+                  {
+                    '--progress': duration
+                      ? `${(currentTime / duration) * 100}%`
+                      : '0%',
+                  } as React.CSSProperties
                 }
-                onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+                aria-label='Seek'
               />
-              <span className='player-title'>Meet Me On The Dance Floor</span>
-              <div className='player-scrubber'>
-                <input
-                  type='range'
-                  min={0}
-                  max={duration || 0}
-                  step={0.01}
-                  value={currentTime}
-                  onChange={scrub}
-                  style={
-                    {
-                      '--progress': duration
-                        ? `${(currentTime / duration) * 100}%`
-                        : '0%',
-                    } as React.CSSProperties
-                  }
-                  aria-label='Seek'
-                />
-                <div className='player-times'>
-                  <span>{formatTime(currentTime)}</span>
-                  <span>{formatTime(duration)}</span>
-                </div>
+              <div className='player-times'>
+                <span>{formatTime(currentTime)}</span>
+                <span>{formatTime(duration)}</span>
               </div>
-              <div className='player-controls'>
-                <button onClick={restart} aria-label='Restart'>
+            </div>
+            <div className='player-controls'>
+              <button onClick={restart} aria-label='Restart'>
+                <svg
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  width='18'
+                  height='18'
+                >
+                  <path d='M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z' />
+                </svg>
+              </button>
+              <button
+                onClick={togglePlay}
+                className='play-pause'
+                aria-label={playing ? 'Pause' : 'Play'}
+              >
+                {playing ? (
                   <svg
                     viewBox='0 0 24 24'
                     fill='currentColor'
-                    width='18'
-                    height='18'
+                    width='22'
+                    height='22'
                   >
-                    <path d='M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z' />
+                    <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
                   </svg>
-                </button>
-                <button
-                  onClick={togglePlay}
-                  className='play-pause'
-                  aria-label={playing ? 'Pause' : 'Play'}
-                >
-                  {playing ? (
-                    <svg
-                      viewBox='0 0 24 24'
-                      fill='currentColor'
-                      width='22'
-                      height='22'
-                    >
-                      <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
-                    </svg>
-                  ) : (
-                    <svg
-                      viewBox='0 0 24 24'
-                      fill='currentColor'
-                      width='22'
-                      height='22'
-                    >
-                      <path d='M8 5v14l11-7z' />
-                    </svg>
-                  )}
-                </button>
-              </div>
+                ) : (
+                  <svg
+                    viewBox='0 0 24 24'
+                    fill='currentColor'
+                    width='22'
+                    height='22'
+                  >
+                    <path d='M8 5v14l11-7z' />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
+          <h2
+            className='uppercase tracking-widest'
+            style={{
+              fontFamily: 'Barrio',
+              color: 'var(--yellow)',
+              textShadow: '2px 2px 8px #1a0a2e',
+            }}
+          >
+            Bloopers
+          </h2>
+          <video className='trailer-video bloopers-video' controls playsInline>
+            <source
+              src='/src/assets/big sheen blooperz.mov'
+              type='video/quicktime'
+            />
+            <source src='/src/assets/big sheen blooperz.mov' type='video/mp4' />
+          </video>
         </div>
       </section>
     </>

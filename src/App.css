@@ -66,6 +66,11 @@
     0 8px 40px rgba(0, 0, 0, 0.6);
 }
 
+.bloopers-video {
+  max-height: min(100vh, 600px);
+  object-fit: contain;
+}
+
 .script-card {
   width: 100%;
   border-radius: 10px;
@@ -125,29 +130,13 @@
   }
 }
 
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  width: 100%;
-  max-width: 960px;
-  align-items: start;
-
-  @media (max-width: 680px) {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-}
-
-.col-left,
-.col-right {
+.single-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-.col-right {
   gap: 32px;
+  width: 100%;
+  max-width: 720px;
+  align-items: stretch;
 }
 
 .music-player {
