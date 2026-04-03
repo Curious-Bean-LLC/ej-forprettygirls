@@ -1,18 +1,10 @@
 import { useRef, useState } from 'react'
 import './App.css'
 
-const coverImageUrl = new URL(
-  './assets/mmotdf-cover.png',
-  import.meta.url,
-).href
-const trailerVideoUrl = new URL(
-  './assets/mmotdf-trailer.mov',
-  import.meta.url,
-).href
-const audioUrl = new URL(
-  './assets/mmotdf.mp3',
-  import.meta.url,
-).href
+const coverImageUrl = new URL('./assets/mmotdf-cover.png', import.meta.url).href
+const trailerVideoUrl = new URL('./assets/mmotdf-trailer.mov', import.meta.url)
+  .href
+const audioUrl = new URL('./assets/mmotdf.mp3', import.meta.url).href
 const bloopersVideoUrl = new URL(
   './assets/mmotdf-bloopers.mov',
   import.meta.url,
@@ -149,6 +141,16 @@ function App() {
           >
             for pretty girls that don't dance
           </h1>
+          <p className='text-white/70 text-sm leading-relaxed uppercase'>
+            <a
+              className='site-footer-link'
+              href='https://partiful.com/e/cdSZY4nyvjnxXfb5Xq3a'
+              target='_blank'
+              rel='noopener noreferrer'
+            >RSVP</a>{' '}
+            for the single release party
+            <p>Friday, April 17th @ 6:00 PM</p>
+          </p>
         </div>
         <div className='flex flex-col gap-8 w-full max-w-180'>
           <h2
@@ -175,10 +177,16 @@ function App() {
           >
             Script
           </h2>
-          <section className='script-card w-full rounded-[10px] p-4 text-center shadow-[0_8px_28px_rgba(0,0,0,0.45)]' aria-label='Scene script'>
+          <section
+            className='script-card w-full rounded-[10px] p-4 text-center shadow-[0_8px_28px_rgba(0,0,0,0.45)]'
+            aria-label='Scene script'
+          >
             <div className='flex flex-col gap-2.5'>
               {scriptLines.map((line, idx) => (
-                <p key={`${line.speaker}-${idx}`} className='m-0 leading-[1.45] text-white/95'>
+                <p
+                  key={`${line.speaker}-${idx}`}
+                  className='m-0 leading-[1.45] text-white/95'
+                >
                   <span
                     className={`block mb-0.5 font-bold tracking-wider uppercase speaker-${line.speaker.toLowerCase()}`}
                   >
@@ -222,7 +230,9 @@ function App() {
               onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
               onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
             />
-            <span className='player-title text-xs tracking-[0.15em] uppercase opacity-75'>Meet Me On The Dance Floor</span>
+            <span className='player-title text-xs tracking-[0.15em] uppercase opacity-75'>
+              Meet Me On The Dance Floor
+            </span>
             <div className='w-full flex flex-col gap-1'>
               <input
                 className='player-scrubber-input'
@@ -247,7 +257,11 @@ function App() {
               </div>
             </div>
             <div className='flex items-center gap-4'>
-              <button className='player-btn w-10 h-10' onClick={restart} aria-label='Restart'>
+              <button
+                className='player-btn w-10 h-10'
+                onClick={restart}
+                aria-label='Restart'
+              >
                 <svg
                   viewBox='0 0 24 24'
                   fill='currentColor'
@@ -301,18 +315,62 @@ function App() {
         </div>
       </section>
       <footer className='mt-15 py-8 px-5 text-center text-white/70 text-sm leading-relaxed uppercase'>
-        <p className='my-1'>© 2026</p>
         <p className='my-1'>
-          <a className='site-footer-link' href='https://emmittjames.com' target='_blank' rel='noopener noreferrer'>
-            emmittjames.com
+          a project by{' '}
+          <a
+            className='site-footer-link'
+            href='https://emmittjames.com'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            emmitt james
           </a>
         </p>
         <p className='my-1'>
-          brought to you by{' '}
-          <a className='site-footer-link' href='https://curiousbean.dev' target='_blank' rel='noopener noreferrer'>
+          cover art by{' '}
+          <a
+            className='site-footer-link'
+            href='https://www.instagram.com/wealthyfrog/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            leah
+          </a>
+        </p>
+        <p className='my-1'>
+          song produced by{' '}
+          <a
+            className='site-footer-link'
+            href='https://www.instagram.com/mandillafx/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            mandilla fx
+          </a>
+        </p>
+        <p className='my-1'>
+          shot by{' '}
+          <a
+            className='site-footer-link'
+            href='https://www.instagram.com/forevergolden_productions/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            forever golden productions
+          </a>
+        </p>
+        <p className='my-1'>
+          website by{' '}
+          <a
+            className='site-footer-link'
+            href='https://curiousbean.dev'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             curious bean llc
           </a>
         </p>
+        <p className='my-1'>© 2026</p>
       </footer>
     </>
   )
