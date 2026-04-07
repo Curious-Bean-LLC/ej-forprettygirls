@@ -167,16 +167,6 @@ function App() {
             <source src={trailerVideoUrl} type='video/quicktime' />
             <source src={trailerVideoUrl} type='video/mp4' />
           </video>
-          <h2
-            className='uppercase tracking-widest'
-            style={{
-              fontFamily: 'Barrio',
-              color: 'var(--yellow)',
-              textShadow: '2px 2px 8px #1a0a2e',
-            }}
-          >
-            Script
-          </h2>
           <section
             className='script-card w-full rounded-[10px] p-4 text-center shadow-[0_8px_28px_rgba(0,0,0,0.45)]'
             aria-label='Scene script'
@@ -205,23 +195,13 @@ function App() {
               textShadow: '2px 2px 8px #1a0a2e',
             }}
           >
-            Cover
+            Listen
           </h2>
           <img
             className='w-full rounded-md shadow-[0_8px_40px_rgba(0,0,0,0.6)]'
             src={coverImageUrl}
             alt='Meet Me On The Dance Floor'
           />
-          <h2
-            className='uppercase tracking-widest'
-            style={{
-              fontFamily: 'Barrio',
-              color: 'var(--yellow)',
-              textShadow: '2px 2px 8px #1a0a2e',
-            }}
-          >
-            Listen
-          </h2>
           <div className='music-player flex flex-col items-center gap-3 rounded-[14px] p-4 px-6 w-full shadow-[0_4px_24px_rgba(0,0,0,0.4)] border border-white/15'>
             <audio
               ref={audioRef}
@@ -346,6 +326,26 @@ function App() {
             rel='noopener noreferrer'
           >
             mandilla fx
+          </a>
+        </p>
+        <p className='my-1'>
+          starring{' '}
+          <a
+            className='site-footer-link'
+            href='https://www.instagram.com/emmitt_james'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            em
+          </a>
+          {' '}&{' '}
+          <a
+            className='site-footer-link'
+            href='https://www.instagram.com/___sheena___'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            sheena
           </a>
         </p>
         <p className='my-1'>
