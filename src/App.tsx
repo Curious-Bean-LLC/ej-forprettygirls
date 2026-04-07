@@ -197,85 +197,87 @@ function App() {
           >
             Listen
           </h2>
-          <img
-            className='w-full rounded-md shadow-[0_8px_40px_rgba(0,0,0,0.6)]'
-            src={coverImageUrl}
-            alt='Meet Me On The Dance Floor'
-          />
-          <div className='music-player flex flex-col items-center gap-3 rounded-[14px] p-4 px-6 w-full shadow-[0_4px_24px_rgba(0,0,0,0.4)] border border-white/15'>
-            <audio
-              ref={audioRef}
-              src={audioUrl}
-              onEnded={() => setPlaying(false)}
-              onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
-              onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+          <div className='flex gap-4 items-stretch'>
+            <img
+              className='h-[200px] w-auto rounded-md shadow-[0_8px_40px_rgba(0,0,0,0.6)] object-cover'
+              src={coverImageUrl}
+              alt='Meet Me On The Dance Floor'
             />
-            <span className='player-title text-xs tracking-[0.15em] uppercase opacity-75'>
-              Meet Me On The Dance Floor
-            </span>
-            <div className='w-full flex flex-col gap-1'>
-              <input
-                className='player-scrubber-input'
-                type='range'
-                min={0}
-                max={duration || 0}
-                step={0.01}
-                value={currentTime}
-                onChange={scrub}
-                style={
-                  {
-                    '--progress': duration
-                      ? `${(currentTime / duration) * 100}%`
-                      : '0%',
-                  } as React.CSSProperties
-                }
-                aria-label='Seek'
+            <div className='music-player flex flex-col items-center gap-3 rounded-[14px] p-4 px-6 flex-1 shadow-[0_4px_24px_rgba(0,0,0,0.4)] border border-white/15'>
+              <audio
+                ref={audioRef}
+                src={audioUrl}
+                onEnded={() => setPlaying(false)}
+                onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
+                onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
               />
-              <div className='player-times flex justify-between text-[0.65rem] tracking-wider opacity-50'>
-                <span>{formatTime(currentTime)}</span>
-                <span>{formatTime(duration)}</span>
+              <span className='player-title text-xs tracking-[0.15em] uppercase opacity-75'>
+                Meet Me On The Dance Floor
+              </span>
+              <div className='w-full flex flex-col gap-1'>
+                <input
+                  className='player-scrubber-input'
+                  type='range'
+                  min={0}
+                  max={duration || 0}
+                  step={0.01}
+                  value={currentTime}
+                  onChange={scrub}
+                  style={
+                    {
+                      '--progress': duration
+                        ? `${(currentTime / duration) * 100}%`
+                        : '0%',
+                    } as React.CSSProperties
+                  }
+                  aria-label='Seek'
+                />
+                <div className='player-times flex justify-between text-[0.65rem] tracking-wider opacity-50'>
+                  <span>{formatTime(currentTime)}</span>
+                  <span>{formatTime(duration)}</span>
+                </div>
               </div>
-            </div>
-            <div className='flex items-center gap-4'>
-              <button
-                className='player-btn w-10 h-10'
-                onClick={restart}
-                aria-label='Restart'
-              >
-                <svg
-                  viewBox='0 0 24 24'
-                  fill='currentColor'
-                  width='18'
-                  height='18'
+              <div className='flex items-center gap-4'>
+                <button
+                  className='player-btn w-10 h-10'
+                  onClick={restart}
+                  aria-label='Restart'
                 >
-                  <path d='M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z' />
-                </svg>
-              </button>
-              <button
-                onClick={togglePlay}
-                className='player-btn w-13 h-13'
-                aria-label={playing ? 'Pause' : 'Play'}
-              >
-                {playing ? (
                   <svg
                     viewBox='0 0 24 24'
                     fill='currentColor'
-                    width='22'
-                    height='22'
+                    width='18'
+                    height='18'
                   >
-                    <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
+                    <path d='M12 5V2L8 6l4 4V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z' />
                   </svg>
-                ) : (
-                  <svg
-                    viewBox='0 0 24 24'
-                    fill='currentColor'
-                    width='22'
-                    height='22'
-                  >
-                    <path d='M8 5v14l11-7z' />
-                  </svg>
-                )}
-              </button>
+                </button>
+                <button
+                  onClick={togglePlay}
+                  className='player-btn w-13 h-13'
+                  aria-label={playing ? 'Pause' : 'Play'}
+                >
+                  {playing ? (
+                    <svg
+                      viewBox='0 0 24 24'
+                      fill='currentColor'
+                      width='22'
+                      height='22'
+                    >
+                      <path d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
+                    </svg>
+                  ) : (
+                    <svg
+                      viewBox='0 0 24 24'
+                      fill='currentColor'
+                      width='22'
+                      height='22'
+                    >
+                      <path d='M8 5v14l11-7z' />
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
           <h2
