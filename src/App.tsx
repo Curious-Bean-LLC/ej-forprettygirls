@@ -141,16 +141,23 @@ function App() {
           >
             for pretty girls that don't dance
           </h1>
-          <p className='text-white/70 text-sm leading-relaxed uppercase'>
+          <div className='ticket'>
+            <div className='ticket-admit-one'>
+              <span className='ticket-admit-text'>ADMIT ONE</span>
+            </div>
+            <div className='ticket-content'>
+              <div className='ticket-event'>Single Release Party</div>
+              <div className='ticket-datetime'>Friday, April 17th @ 6:00 PM</div>
+            </div>
             <a
-              className='site-footer-link'
+              className='ticket-rsvp-button'
               href='https://partiful.com/e/cdSZY4nyvjnxXfb5Xq3a'
               target='_blank'
               rel='noopener noreferrer'
-            >RSVP</a>{' '}
-            for the single release party
-            <p>Friday, April 17th @ 6:00 PM</p>
-          </p>
+            >
+              <span className='ticket-rsvp-text'>RSVP</span>
+            </a>
+          </div>
         </div>
         <div className='flex flex-col gap-8 w-full max-w-180'>
           <h2
@@ -168,7 +175,7 @@ function App() {
             <source src={trailerVideoUrl} type='video/mp4' />
           </video>
           <section
-            className='script-card w-full rounded-[10px] p-4 text-center shadow-[0_8px_28px_rgba(0,0,0,0.45)]'
+            className='script-card w-full p-4 text-center shadow-[0_8px_28px_rgba(0,0,0,0.45)]'
             aria-label='Scene script'
           >
             <div className='flex flex-col gap-2.5'>
@@ -199,16 +206,18 @@ function App() {
           </h2>
           <div className='flex gap-4 items-stretch'>
             <img
-              className='h-[200px] w-auto rounded-md shadow-[0_8px_40px_rgba(0,0,0,0.6)] object-cover'
+              className='h-[200px] w-auto shadow-[0_8px_40px_rgba(0,0,0,0.6)] object-cover'
               src={coverImageUrl}
               alt='Meet Me On The Dance Floor'
             />
-            <div className='music-player flex flex-col items-center gap-3 rounded-[14px] p-4 px-6 flex-1 shadow-[0_4px_24px_rgba(0,0,0,0.4)] border border-white/15'>
+            <div className='music-player flex flex-col items-center gap-3 p-4 px-6 flex-1 shadow-[0_4px_24px_rgba(0,0,0,0.4)] border border-white/15'>
               <audio
                 ref={audioRef}
                 src={audioUrl}
                 onEnded={() => setPlaying(false)}
-                onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
+                onTimeUpdate={(e) =>
+                  setCurrentTime(e.currentTarget.currentTime)
+                }
                 onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
               />
               <span className='player-title text-xs tracking-[0.15em] uppercase opacity-75'>
@@ -339,8 +348,8 @@ function App() {
             rel='noopener noreferrer'
           >
             em
-          </a>
-          {' '}&{' '}
+          </a>{' '}
+          &{' '}
           <a
             className='site-footer-link'
             href='https://www.instagram.com/___sheena___'

@@ -21,7 +21,6 @@
 /* Video with tri-color border effect */
 .trailer-video {
   width: 100%;
-  border-radius: 6px;
   border: 3px solid var(--red);
   box-shadow:
     0 0 0 5px var(--yellow),
@@ -87,7 +86,6 @@
   appearance: none;
   width: 100%;
   height: 4px;
-  border-radius: 2px;
   background: linear-gradient(
     to right,
     rgba(var(--yellow-rgb), 0.9) 0%,
@@ -133,4 +131,93 @@
 .site-footer-link:hover {
   opacity: 0.8;
   text-decoration: underline;
+}
+
+/* Ticket */
+.ticket {
+  position: relative;
+  background: var(--red);
+  padding: 8px;
+  max-width: 450px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  gap: 8px;
+}
+
+.ticket-admit-one {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px dashed var(--yellow);
+  padding-right: 8px;
+  margin-right: -8px;
+}
+
+.ticket-admit-text {
+  writing-mode: sideways-lr;
+  font-family: 'Barrio', sans-serif;
+  color: var(--yellow);
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+}
+
+.ticket-content {
+  flex: 1;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+
+.ticket-event {
+  font-family: 'Inconsolata', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+  color: var(--yellow);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+.ticket-datetime {
+  font-family: 'Inconsolata', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+  color: var(--yellow);
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.ticket-rsvp-button {
+  background: var(--purple);
+  border: none;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+
+  align-self: center;
+}
+
+.ticket-rsvp-button:hover {
+  background: var(--red);
+}
+
+.ticket-rsvp-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: 'Barrio', sans-serif;
+  color: var(--yellow);
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  padding: 8px 0;
 }
