@@ -207,7 +207,7 @@
 }
 
 .ticket-rsvp-button:hover {
-  background: var(--red);
+  background: var(--green);
 }
 
 .ticket-rsvp-text {
