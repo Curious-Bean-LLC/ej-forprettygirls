@@ -141,23 +141,6 @@ function App() {
           >
             for pretty girls that don't dance
           </h1>
-          <div className='ticket'>
-            <div className='ticket-admit-one'>
-              <span className='ticket-admit-text'>ADMIT ONE</span>
-            </div>
-            <div className='ticket-content'>
-              <div className='ticket-event'>Single Release Party</div>
-              <div className='ticket-datetime'>Friday, April 17th @ 6:00 PM</div>
-            </div>
-            <a
-              className='ticket-rsvp-button'
-              href='https://partiful.com/e/cdSZY4nyvjnxXfb5Xq3a'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <span className='ticket-rsvp-text'>RSVP</span>
-            </a>
-          </div>
         </div>
         <div className='flex flex-col gap-8 w-full max-w-180'>
           <h2
